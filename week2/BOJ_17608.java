@@ -26,8 +26,11 @@ public class BOJ_17608 {
         }
 
         System.out.println(counts);
+        
 
         scan.close();
     
+        
     }
+
 }
