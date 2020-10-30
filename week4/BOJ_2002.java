@@ -12,13 +12,13 @@ public class BOJ_2002 {
         int count = 0;
 
         for (int i = 0; i < cars; i++) {
-            String temp = scan.nextLine();
+            String temp = scan.next();
             carNames.put(temp, i);
         }
         int[] out = new int[cars];
 
         for (int i = 0; i < cars; i++) {
-            String temp = scan.nextLine();
+            String temp = scan.next();
             out[i] = carNames.get(temp);
         }
 
@@ -33,5 +33,6 @@ public class BOJ_2002 {
             }
         }
         System.out.println(count);
+        scan.close();
     }
 }
