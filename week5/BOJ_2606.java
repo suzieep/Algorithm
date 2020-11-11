@@ -28,26 +28,26 @@ public class BOJ_2606 {
         boold = new boolean[edge+1];
         arrList = new ArrayList[edge+1];
         
-        for(int i=0; i<=edge; i++){
+        for(int i=1; i<=edge; i++){
             arrList[i] = new ArrayList<Integer>();
         }       
 
-        for(int i=0; i<line; i++){
+        for(int i=1; i<=line; i++){
             int a = scan.nextInt();
             int b = scan.nextInt();
             arrList[a].add(b);
             arrList[b].add(a);
         }
-        for(int i=0; i<line; i++){
+        for(int i=1; i<=edge; i++){
             Collections.sort(arrList[i]);
         }
         dfs(initEdge);
-        for(int i=0; i<line; i++){
+        for(int i=1; i<=edge; i++){
             if(boold[i]){
                 count++;
             };
         }
-        System.out.println(count);
+        System.out.println(count-1);
         scan.close();
     }
     
