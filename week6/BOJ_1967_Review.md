@@ -1,6 +1,8 @@
 ```java
+global stack
 for(nowN : )
 dfs(nowN){
+    stack.push(nowN)
     visited[nowN]=true
     cnt =0
     for(nextN : nowN가 만나는 nodes){
@@ -14,6 +16,9 @@ dfs(nowN){
         }
     }
     if(cnt==0){
-        nextN=2였으면 좋겠느ㅡㄴ데 한단계 위 어떻게...
+        stack.pop(nowN)
+        nextN=stack.peek()
     }
+    dfs(nextN)
 }
+```
