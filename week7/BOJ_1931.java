@@ -2,16 +2,6 @@ package week7;
 
 import java.util.*;
 public class BOJ_1931 {
-
-    static class Meeting {
-        int start;
-        int finish;
-
-        public Meeting(int start, int finish){
-            this.start= start;
-            this.finish=finish;
-        }
-    }
     public static void main(String []args){
 
         
