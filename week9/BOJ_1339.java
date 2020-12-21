@@ -23,7 +23,7 @@ public class BOJ_1339 {
             }
         }
 
-        Arrays.sort(alpha);
+        Arrays.sort(al);
         int idx = 9;
         int sum =0;
         for(int i=al.length-1; i>=0; i--){
