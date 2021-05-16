@@ -1,5 +1,8 @@
 import heapq
 
+# 최단경로 찾기, 배열에 노드의 연결 방향 정보와 가중치가 나오고, 트랩을 가게되면 방향이 바뀐다. 최단거리를 구해라
+
+# 경로찾기에 다익스트라가 제일 좋을 것 같아서 다익스트라 써줌
 def Dijkstra(graph,n,start,heap,dp):
     dp[start] = 0 
     heapq.heappush(heap,(0, start)) 
@@ -20,11 +23,12 @@ def solution(n, start, end, roads, traps):
     answer = 0
     graph = [[] for _ in range(n + 1)]
 
+    #그래프에다가 노드와 방향정보를 넣어주고
     for i in roads:
         graph[i[0]].append((i[2],i[1]))
-
-    Dijkstra(graph,n,start,heap,dp)
-
+    
+    #다익스트라 돌려줌
+    answer = Dijkstra(graph,n,start,heap,dp)
 
     return answer
 
