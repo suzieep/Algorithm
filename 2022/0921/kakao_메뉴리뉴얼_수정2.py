@@ -1,23 +1,15 @@
-#85점(시간초과)
+#백만년의 시간..
 from itertools import combinations
 from itertools import chain
 
 def solution(orders, course):
     answer = []
-    menu_cnt =[0]*26
-    menu=''
-    for i in orders:
-        for j in i:
-            menu_cnt[ord(j)-65]+=1
-    for i in range(len(menu_cnt)):
-        if menu_cnt[i]>0:
-            menu+=chr(i+65)
-            
+    menu=''.join(sorted(set(chain(*orders))))
     combi_result=[[] for _ in range(course[-1]+1)]
     combi_total=[]
     dic ={}
     for i in course:
-        combi_result[i]=list(combinations(''.join(sorted(menu)),i))
+        combi_result[i]=list(combinations(menu,i))
     combi_total = list(chain(*combi_result))
     
     maxs = [0]*(course[-1]+1)
@@ -28,6 +20,8 @@ def solution(orders, course):
         for j in orders:
             if set(tmp) <= set(j):
                 dic[tmp]=dic[tmp]+1
+        if dic[tmp]==0:
+            del dic[tmp]
     for key,value in dic.items():
         maxs[len(key)]=max(maxs[len(key)],value)
     for i in course:
